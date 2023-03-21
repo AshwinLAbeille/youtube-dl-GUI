@@ -73,7 +73,6 @@ function downloadVideo() {
   } else {
     // Get the error message from the yt-dlp log file
     var fso = new ActiveXObject("Scripting.FileSystemObject");
-    var logFile = fso.OpenTextFile("yt-dlp.log", 1);
     var logText = logFile.ReadAll();
     logFile.Close();
 
@@ -98,7 +97,6 @@ function downloadAudio() {
   } else {
     // Get the error message from the yt-dlp log file
     var fso = new ActiveXObject("Scripting.FileSystemObject");
-    var logFile = fso.OpenTextFile("yt-dlp.log", 1);
     logFile.Close();
 
     // Display the error message

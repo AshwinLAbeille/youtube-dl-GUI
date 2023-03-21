@@ -139,7 +139,7 @@ ExecuteGlobal("Set WScript = CreateObject(""WScript.Shell"")")
 Sub RunCommand1()
     ' Run the command to install yt-dlp and FFmpeg using Winget inside an elevated PowerShell
     Set shell = CreateObject("WScript.Shell")
-    shell.Run "powershell.exe -Command ""Start-Process -FilePath Powershell -ArgumentList '-NoExit -Command & {winget install yt-dlp --accept-package-agreements --accept-source-agreements --force ; winget install ffmpeg --accept-package-agreements --accept-source-agreements}' -Verb runas""", 1, True
+    shell.Run "powershell.exe -Command ""Start-Process -FilePath Powershell -ArgumentList '-NoExit -Command & {Set-ExecutionPolicy Unrestricted -Force ; winget install yt-dlp --accept-package-agreements --accept-source-agreements --force ; winget install ffmpeg --accept-package-agreements --accept-source-agreements}' -Verb runas""", 1, True
 End Sub
 
 </script>

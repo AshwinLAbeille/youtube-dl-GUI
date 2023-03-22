@@ -56,6 +56,25 @@
 <!-- Add a button to trigger the script audio only -->
 <button onclick="downloadAudio()" style="display: block; margin: 0 auto;">Download Audio Only</button>
 
+<!-- creates a log file named yt-dlp.log in the same directory as the hta file -->
+        <script language="JavaScript">
+            var fso = new ActiveXObject("Scripting.FileSystemObject");
+            var logFile = fso.CreateTextFile("yt-dlp.log", true);
+
+            function runCommand() {
+                var cmd = document.getElementById("cmd").value;
+                var exec = new ActiveXObject("WScript.Shell").Exec(cmd);
+                var output = exec.StdOut.ReadAll();
+                document.getElementById("output").innerText = output;
+                logFile.WriteLine(cmd + "\n" + output + "\n");
+            }
+
+            window.onunload = function() {
+                logFile.Close();
+                fso.DeleteFile("yt-dlp.log");
+            }
+        </script>
+
 <!-- Add a script to trigger the yt-dlp script -->
 <script>
 function downloadVideo() {

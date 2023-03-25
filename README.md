@@ -17,3 +17,5 @@ added a button that installs yt-dlp and ffmpeg via winget automatically
 
 should change : find a way to add '%LOCALAPPDATA%\Microsoft\winget\packages' to the path with a button
                 
+[v2](https://github.com/AshwinLAbeille/youtube-dl-GUI/blob/main/YT-DLP%20Downloaderv3.hta) third prototype
+updates yt-dlp at opening
